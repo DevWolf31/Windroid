@@ -1,7 +1,0 @@
-{
-    "name": "windroid",
-    "description": "A system created in JS using Electron and React",
-    "version": "3.6.0",
-    "main": "dist/windroid.js",
-    "author": "MarcosMD09"
-}
