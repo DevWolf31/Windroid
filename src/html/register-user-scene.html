@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+        <title>Windroid 3.6.0</title>
+    </head>
+    <body style="background: radial-gradient(#0846a3, #0b6bfa);"></body>
+        <div class="container bg-transparent">
+            <div class="row">
+                <div class="col">
+                    <br><br><br><br><br><br><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 mx-auto justify-content-center">
+                    <form>
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="username" placeholder="User" required>
+                            <label for="username">Name</label>
+                        </div>
+                        <br>
+                        <div class="form-floating">
+                            <input class="form-control" type="password" placeholder="Password" id="userpass">
+                            <label for="userpass">Password</label>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-lg" id="register">Create</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(async function(){
+                $('#register').click(async function(){
+                    
+                    var name = await document.getElementById('username').value;
+                    var pass = await document.getElementById('userpass').value;
+
+                    await windroid.user.register(name, pass);
+                    await windroid.user.loginScene();
+                });
+            });
+        </script>
+    </body>
+</html>
